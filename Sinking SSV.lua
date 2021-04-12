@@ -51,7 +51,7 @@ surface.CreateFont( "DevMod", {
 hook.Add( "HUDPaint", "Oofed", function()
     for i = 1, 60 do
 end
-    draw.SimpleTextOutlined("LeSheitan17", "DevMod", ScrW() /2, ScrH() /2,Color( 0, 0, 0),TEXT_ALIGN_CENTER,TEXT_ALIGN_CENTER,3,Color( 255, 255, 255))
+    draw.SimpleTextOutlined("Kurama", "DevMod", ScrW() /2, ScrH() /2,Color( 0, 0, 0),TEXT_ALIGN_CENTER,TEXT_ALIGN_CENTER,3,Color( 255, 255, 255))
 local mat = Entity(0):GetMaterials()
     for k,v in pairs(mat) do
     end
