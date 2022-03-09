@@ -1,5 +1,5 @@
-# GmodKuramaVisuel
-My Visuel Gmod
+# Visual Gmod
+My Visual Gmod
 
 Obligation to credit myself in the visual.
 
