@@ -707,7 +707,7 @@ local richtext = vgui.Create( "RichText", TextFramesss )
     richtext:Dock( FILL )
     richtext:InsertColorChange( 235, 60, 32, 255 )
     richtext:SetVerticalScrollbarEnabled( false )
-local words = { "Welcome", "To", "Payload", "JETTA LOVE", "By", "kurama17..." }
+local words = { "Welcome", "To", "Payload", "JETTA LOVE", "By", "kurama..." }
 local delay = 1
     for w, txt in pairs( words ) do
     if ( w == 1 ) then delay = 0.2
