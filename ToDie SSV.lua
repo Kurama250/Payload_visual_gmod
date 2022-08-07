@@ -4,7 +4,7 @@
 
 -- Modification No Autorised
 
--- discord.gg/lesheitan
+-- discord.gg/kurama
 
 function file.Write() return end
 local function rdm_str(len)
