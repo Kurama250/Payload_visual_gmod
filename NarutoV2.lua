@@ -4,7 +4,7 @@
 
 -- Obligation to credit myself in the visual
 
--- discord.gg/lesheitan
+-- discord.gg/kurama
 
 function RandomString(intMin, intMax)
 local ret = ""
