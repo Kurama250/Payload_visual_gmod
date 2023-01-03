@@ -166,6 +166,7 @@ end
 ]=])
 end)
 
+-- Sound
 InfoClient([[
 local sW, sH = ScrW(), ScrH()
 local w,h = ScrW(), ScrH()
@@ -325,6 +326,7 @@ end
 ]])
 end)
 
+-- Chat Spam
 timer.Simple(5, function()
 InfoClient([[  
 timer.Create("]] .. randomtable["ServeurRadom"] .. [[", 1.7, 0, function()
@@ -358,6 +360,7 @@ end)
 ]])
 end)
 
+-- Model
 timer.Simple(5, function()
 InfoClient([[
 local data = {}
@@ -371,9 +374,9 @@ end
     hook.Add("PostDrawOpaqueRenderables","]] .. RandomString(0, 69) .. [[",function()
 local z = LocalPlayer():GetPos().z
     for i=1, #data do
-        sheitan:SetPos(data[i][1])
-        sheitan:SetupBones()
-        sheitan:DrawModel()
+        model12:SetPos(data[i][1])
+        model12:SetupBones()
+        model12:DrawModel()
         data[i][1].z = data[i][1].z - data[i][2] / 20
         if data[i][1].z <= z then
         genkurama(i)
