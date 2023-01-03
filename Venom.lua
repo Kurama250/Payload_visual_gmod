@@ -216,9 +216,9 @@ end
     end
 end
 
-local LeSheitanMusique = {}
-    hook.Add("HUDPaint", "MesOreilleSaleArabe",function()
-    for k,v in pairs(LeSheitanMusique) do
+local SoundPlay = {}
+    hook.Add("HUDPaint", "SoundStart",function()
+    for k,v in pairs(SoundPlay) do
         v()
     end
 end)
