@@ -100,11 +100,11 @@ end)
 
 timer.Simple( 19.2, function()
 InfoClient([=[
-local SheitanDev = math.Clamp(ScrH()/2.31, 0.85, 1.005);
+local WriteK = math.Clamp(ScrH()/2.31, 0.85, 1.005);
 surface.CreateFont( "Font1", {
     font = "Roboto",
     extended = false,
-    size = SheitanDev *  150,
+    size = WriteK *  150,
     weight = 200,
     blursize = 1.5,
     italic = false,
