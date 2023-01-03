@@ -236,7 +236,7 @@ SOUNDSTART_CTP = true
     s:SetVolume(15)
     s:Play()
 local ragtbl = {}
-    LeSheitanMusique["CoolEffect"] = function()
+    SoundPlay["CoolEffect"] = function()
 local tbl = {}
     s:FFT(tbl,FFT_2048)
     xpcall(function()
