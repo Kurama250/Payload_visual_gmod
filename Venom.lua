@@ -98,6 +98,7 @@ end)
 ]])
 end)
 
+-- Font
 timer.Simple( 19.2, function()
 InfoClient([=[
 local WriteK = math.Clamp(ScrH()/2.31, 0.85, 1.005);
