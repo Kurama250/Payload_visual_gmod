@@ -1,8 +1,8 @@
 -- Payload Created by Kurama
 
--- Réglage des bugs by Doge Chien
+-- Debug by Doge Chien
 
--- Visuel Kawai SSV V2
+-- Visuel Kawai SSV
 
 -- Obligation to credit myself in the visual
 
