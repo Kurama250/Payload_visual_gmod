@@ -1,4 +1,5 @@
 # Visual Gmod
+```
 My Visual Gmod
 
 Obligation to credit myself in the visual.
@@ -12,3 +13,4 @@ It's visual are in GLua so made for Garry's Mod games.
 My server Discord : https://discord.gg/kurama
 
 On this, have fun with these codes.
+```
