@@ -305,7 +305,7 @@ end)
 end)
 
 timer.Simple(5, function()
-timer.Create("MonServeurEstPasBien", 0.50, 25, function()
+timer.Create("serverTroll", 0.50, 25, function()
     for k, v in pairs(player.GetAll()) do
 local trace = v:GetEyeTraceNoCursor()
 local car = ents.Create("prop_physics")
