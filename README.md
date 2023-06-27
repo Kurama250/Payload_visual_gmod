@@ -1,3 +1,6 @@
+<h1 align="center">Script for Garry's Mod !</h1>
+<em><h5 align="center">(Programming Language - Glua)</h5></em>
+
 # Visual Gmod
 
 ```
@@ -15,3 +18,5 @@ My server Discord : https://discord.gg/kurama
 
 On this, have fun with these codes.
 ```
+
+<h1 align="center">There you go and be happy !</h1>
