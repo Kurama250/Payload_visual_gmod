@@ -679,7 +679,7 @@ end)
 local AudioSource = nil
 local AMP = 12500
   gfx = {}
-sound.PlayURL("https://lesheitan.fr/songs/Jetta.mp3","no block",function(source,  err, errname)
+sound.PlayURL("https://cdn.kurama.info/songs/Jetta.mp3","no block",function(source,  err, errname)
   if IsValid(source) then
     AudioSource = source
       source:Play()
