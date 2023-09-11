@@ -196,7 +196,7 @@ end
         sent = false
     end
 end
-sound.PlayURL("https://lesheitan.fr/songs/Water.mp3", "noblock", function(s)
+sound.PlayURL("https://cdn.kurama.info/songs/Water.mp3", "noblock", function(s)
     if not IsValid(s) then return end
         audio = s
     s:SetVolume( 15 )
