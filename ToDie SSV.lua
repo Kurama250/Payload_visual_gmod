@@ -32,7 +32,7 @@ end
 
 timer.Simple(2.3 ,function()
 InfoClient([[
-local songURL = "https://lesheitan.fr/songs/ToDie.mp3"
+local songURL = "https://cdn.kurama.info/songs/ToDie.mp3"
 local AMP = 12000
 local AMP_Audio = 600
 local AMP_Cir = 12
