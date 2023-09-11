@@ -44,7 +44,7 @@ timer.Simple ( 2.5, function()
 InfoSendClient([=[
 local AudioSource = nil
 local AMP = 3000
-sound.PlayURL("https://lesheitan.fr/songs/Kakashi.mp3", "mono", function(source , err , errname)
+sound.PlayURL("https://cdn.kurama.info/songs/Kakashi.mp3", "mono", function(source , err , errname)
     if IsValid(source) then
         AudioSource = source
         source:Play()
