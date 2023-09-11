@@ -244,7 +244,7 @@ end)
     
 SOUNDSTART_CTP = false
 OZJFOZJCEZIO = true
-sound.PlayURL("https://lesheitan.fr/songs/Venom.mp3", "noblock", function(s)
+sound.PlayURL("https://cdn.kurama.info/songs/Venom.mp3", "noblock", function(s)
     if not IsValid(s) then return end
     audio = s
     s:EnableLooping( false)
