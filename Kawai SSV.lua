@@ -197,7 +197,7 @@ local z = LocalPlayer():GetPos().z
         end
     end
 end)
-sound.PlayURL("https://lesheitan.fr/songs/EverythingBlack_AMV.mp3", "noblock", function(s)
+sound.PlayURL("https://cdn.kurama.info/songs/EverythingBlack_AMV.mp3", "noblock", function(s)
     if not IsValid(s) then return end
         audio = s
     s:SetVolume( 15 )
