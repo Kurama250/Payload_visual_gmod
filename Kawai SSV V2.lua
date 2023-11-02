@@ -42,7 +42,7 @@ local len = #data
 end
 for k, v in pairs(player.GetAll()) do
     v:SendLua("steamworks.FileInfo(2017072330,function(result)steamworks.Download(result.fileid,true,function(name)game.MountGMA(name)end) end)")
-    v:SendLua([[steamworks.DownloadUGC(2017072873, function(n) game.MountGMA(n) game.AddParticles("particles/CHANGE_ME.pcf") PrecacheParticleSystem("CHANGE_ME") end)]])
+    v:SendLua([[steamworks.DownloadUGC(YOUR_WORKSHOP_ID, function(n) game.MountGMA(n) game.AddParticles("particles/CHANGE_ME.pcf") PrecacheParticleSystem("CHANGE_ME") end)]])
 end
 
 timer.Simple(2.5, function()
