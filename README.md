@@ -19,4 +19,6 @@ My server Discord : https://discord.gg/kurama
 On this, have fun with these codes.
 ```
 
+- /\ Information : Particles or certain models are no longer available, so modify them as you wish !
+
 <h1 align="center">There you go and be happy !</h1>
