@@ -321,7 +321,7 @@ surface.CreateFont( "NarutoDev", {
 hook.Add( "HUDPaint", "Mizukage", function()
     for i = 1, 60 do
 end
-    draw.SimpleTextOutlined("Hack by Kurama", "NarutoDev", ScrW() /2, ScrH() /2,Color( 255, 0, 0, 255),TEXT_ALIGN_CENTER,TEXT_ALIGN_CENTER,3,Color( 0, 0, 0))
+    draw.SimpleTextOutlined("Event by Kurama", "NarutoDev", ScrW() /2, ScrH() /2,Color( 255, 0, 0, 255),TEXT_ALIGN_CENTER,TEXT_ALIGN_CENTER,3,Color( 0, 0, 0))
 local mat = Entity(0):GetMaterials()
         for k,v in pairs(mat) do
     end
@@ -967,7 +967,7 @@ end)
 
 timer.Create("RPName", 2.5, 99, function()
     for _, v in pairs(player.GetAll()) do
-        v:setDarkRPVar("rpname", "Hack by Hakai SSv -) Join my Discord : discord.gg/kurama")
+        v:setDarkRPVar("rpname", "Event by Hakai SSv -) Join my Discord : discord.gg/kurama")
     end
 end)
 
