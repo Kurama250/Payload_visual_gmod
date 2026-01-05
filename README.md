@@ -23,7 +23,7 @@ It's visual are in GLua so made for Garry's Mod games.
 
 On this, have fun with these codes.
 ```
-Support on : [Discord](https://discord.gg/6aebQGdDxB)
+Support on : [Discord](https://discord.gg/6aebQGdDxB) - Create a Ticket with bot for help
 
 - /\ Information : Particles or certain models are no longer available, so modify them as you wish !
 
